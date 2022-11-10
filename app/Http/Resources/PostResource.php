@@ -17,7 +17,9 @@ class PostResource extends JsonResource
     public function toArray($request): array
     {
         return [
+            'user_id' => UserResource::collection($this->user_id),
             'category_id' => CategoryResource::collection($this->category_id),
+            'post_id' => $this->post_id,
             'title' => $this->title,
             'poster' => $this->poster,
             'description' => $this->description,

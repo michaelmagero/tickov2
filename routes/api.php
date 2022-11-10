@@ -1,19 +1,38 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\ForgotPasswordController;
+use App\Http\Controllers\API\PackageController;
+use App\Http\Controllers\API\PostController;
+use App\Http\Controllers\API\SubscriptionController;
+use App\Http\Controllers\API\TicketController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+Route::post('auth/signup', [AuthController::class, 'store']);
+Route::post('auth/login', [AuthController::class, 'login']);
+Route::post('auth/logout', [AuthController::class, 'logout']);
+Route::post('auth/refresh-token', [AuthController::class, 'refresh']);
+Route::post('password-reset/email', [ForgotPasswordController::class, 'forgotPassword']);
+Route::post('password-reset/update', [ForgotPasswordController::class, 'resetPassword']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::apiResource('users', UserController::class);
+    Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('posts', PostController::class);
+    Route::apiResource('tickets', TicketController::class);
+    Route::apiResource('packages', PackageController::class);
+
+    //subscriptions and payments
+    Route::controller(SubscriptionController::class)->group(function () {
+        Route::post('checkout/{id}', 'checkout');
+        Route::get('subscriptions', 'index');
+        Route::post('subscriptions', 'store');
+        Route::get('subscriptions/{subscription}', 'show');
+        Route::put('subscriptions/{subscription}', 'update');
+        Route::delete('subscriptions/{subscription}', 'destroy');
+    });
+
 });

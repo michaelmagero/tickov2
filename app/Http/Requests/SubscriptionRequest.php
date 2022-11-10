@@ -26,6 +26,8 @@ class SubscriptionRequest extends FormRequest
     public function rules()
     {
         return [
+            'user_id' => 'required|integer',
+            'package_id' => 'required|integer',
             'trial_end_date' => 'required|date',
             'subscription_end_date' => 'required|date',
         ];

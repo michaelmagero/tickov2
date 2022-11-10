@@ -24,6 +24,7 @@ class TicketRequest extends FormRequest
     public function rules()
     {
         return [
+            'post_id' => 'required|integer',
             'batch_no' => 'required|string',
             'quantity' => 'required|integer',
             'ticket_categories' => 'required|json',
