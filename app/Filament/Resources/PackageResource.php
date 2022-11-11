@@ -19,11 +19,24 @@ class PackageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+    protected static ?int $navigationSort = 5;
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('price')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('ticket_slots')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('discount')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -31,7 +44,10 @@ class PackageResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')->searchable(),
+                Tables\Columns\TextColumn::make('price')->searchable(),
+                Tables\Columns\TextColumn::make('ticket_slots')->searchable(),
+                Tables\Columns\TextColumn::make('discount')->searchable(),
             ])
             ->filters([
                 //
@@ -43,14 +59,14 @@ class PackageResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +74,5 @@ class PackageResource extends Resource
             'create' => Pages\CreatePackage::route('/create'),
             'edit' => Pages\EditPackage::route('/{record}/edit'),
         ];
-    }    
+    }
 }
