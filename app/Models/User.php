@@ -35,6 +35,22 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
+    //FILAMENT
+
+    public function canAccessFilament(): bool
+    {
+        return $this->email == 'sadmin@ticko.co.ke';
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar_url;
+    }
+
+
+
+    //RELATIONSHIPS
     /**
      * The attributes that should be cast.
      *
