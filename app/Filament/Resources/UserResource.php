@@ -55,7 +55,11 @@ class UserResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Select::make('role')
                     ->required()
-                    ->options(['admin', 'buyer', 'vendor'])
+                    ->options([
+                        'admin' => 'admin',
+                        'buyer' => 'buyer',
+                        'vendor' => 'vendor'
+                    ])
             ]);
     }
 
@@ -73,7 +77,7 @@ class UserResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->color('success'),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([

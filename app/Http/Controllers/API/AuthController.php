@@ -8,10 +8,12 @@ use App\Models\User;
 use App\Services\EmailService;
 use App\Services\HelperService;
 use App\Services\MessageService;
+use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class AuthController extends Controller
@@ -34,10 +36,12 @@ class AuthController extends Controller
             }
 
             $user = User::create([
-                'firstname' => $request->firstname,
+                'name' => $request->name,
                 'lastname' => $request->lastname,
+                'username' => $request->username,
                 'phone' => (new HelperService())->formatPhoneNumber($request->phone),
                 'email' => $request->email,
+                'company' => $request->email,
                 'password' => bcrypt($request->password),
                 'role' => $request->role,
                 'status' => $request->status,
@@ -61,20 +65,17 @@ class AuthController extends Controller
     public function login(Request $request): JsonResponse
     {
         try {
-            $validateUser = Validator::make($request->all(),
-                [
-                    'email' => 'required|email',
-                    'password' => 'required'
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
+
+            $user = User::where('email', $request->email)->first();
+
+            if (! $user || ! Hash::check($request->password, $user->password)) {
+                throw ValidationException::withMessages([
+                    'email' => ['The provided credentials are incorrect.'],
                 ]);
-
-            if ($validateUser->fails()){
-
-                return response()->json([
-                    'status' => false,
-                    'message' => 'validation error',
-                    'errors' => $validateUser->errors()
-                ], 401);
-
             }
 
             if(User::where('email', $request->email)->doesntExist())

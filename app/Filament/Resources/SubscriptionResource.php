@@ -4,7 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\SubscriptionResource\Pages;
 use App\Filament\Resources\SubscriptionResource\RelationManagers;
+use App\Models\Package;
 use App\Models\Subscription;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -25,21 +27,22 @@ class SubscriptionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
+                Forms\Components\Select::make('user_id')
+                    ->label('Company')
+                    ->options(User::all()->pluck('company', 'id'))
+                    ->disablePlaceholderSelection(),
+                Forms\Components\Select::make('package_id')
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('package_id')
+                    ->label('Package')
+                    ->options(Package::all()->pluck('name', 'id'))
+                    ->disablePlaceholderSelection(),
+                Forms\Components\Select::make('status')
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('trials_end_date')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('subscription_end_date')
-                    ->required()
-                    ->maxLength(255),
+                    ->options([0 => 'In-Active', 1 => 'Active']),
+                Forms\Components\DatePicker::make('trial_end_date')
+                    ->required(),
+                Forms\Components\DatePicker::make('subscription_end_date')
+                    ->required(),
             ]);
     }
 
@@ -47,18 +50,20 @@ class SubscriptionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id')->searchable(),
-                Tables\Columns\TextColumn::make('package_id')->searchable(),
-                Tables\Columns\TextColumn::make('status')->searchable(),
-                Tables\Columns\TextColumn::make('trial_end_date')->searchable(),
-                Tables\Columns\TextColumn::make('subscription_end_date')->searchable(),
+                Tables\Columns\TextColumn::make('user.company')->searchable()->label('Company'),
+                Tables\Columns\TextColumn::make('package.name')->searchable(),
+                Tables\Columns\BooleanColumn::make('status')->searchable(),
+                Tables\Columns\TextColumn::make('trial_end_date')
+                    ->dateTime('Y M d')->sortable(),
+                Tables\Columns\TextColumn::make('subscription_end_date')
+                    ->dateTime('Y M d')->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()->color('success'),
+                Tables\Actions\DeleteAction::make()->icon('heroicon-s-trash'),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

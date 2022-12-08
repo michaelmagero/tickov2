@@ -3,7 +3,10 @@
 namespace App\Http\Resources;
 
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource
@@ -17,8 +20,9 @@ class PostResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'user_id' => UserResource::collection($this->user_id),
-            'category_id' => CategoryResource::collection($this->category_id),
+            'id' => $this->id,
+            'user_id' => UserResource::collection(User::where('id', $this->user_id)->get()),
+            'category_id' => CategoryResource::collection(Category::where('id', $this->category_id)->get()),
             'post_id' => $this->post_id,
             'title' => $this->title,
             'poster' => $this->poster,

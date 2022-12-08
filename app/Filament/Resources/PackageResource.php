@@ -17,7 +17,7 @@ class PackageResource extends Resource
 {
     protected static ?string $model = Package::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-folder';
 
     protected static ?int $navigationSort = 5;
 
@@ -44,8 +44,8 @@ class PackageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('price')->searchable(),
+                Tables\Columns\TextColumn::make('name')->label('Package')->searchable(),
+                Tables\Columns\TextColumn::make('price')->money('kes')->searchable(),
                 Tables\Columns\TextColumn::make('ticket_slots')->searchable(),
                 Tables\Columns\TextColumn::make('discount')->searchable(),
             ])
@@ -53,7 +53,8 @@ class PackageResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->color('success'),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

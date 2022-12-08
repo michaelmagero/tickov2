@@ -18,17 +18,12 @@ Route::post('password-reset/email', [ForgotPasswordController::class, 'forgotPas
 Route::post('password-reset/update', [ForgotPasswordController::class, 'resetPassword']);
 
 Route::middleware('auth:sanctum')->group(function () {
-
-    Route::apiResource('users', UserController::class);
-    Route::apiResource('categories', CategoryController::class);
     Route::apiResource('posts', PostController::class);
     Route::apiResource('tickets', TicketController::class);
-    Route::apiResource('packages', PackageController::class);
 
     //subscriptions and payments
     Route::controller(SubscriptionController::class)->group(function () {
         Route::post('checkout/{id}', 'checkout');
-        Route::get('subscriptions', 'index');
         Route::post('subscriptions', 'store');
         Route::get('subscriptions/{subscription}', 'show');
         Route::put('subscriptions/{subscription}', 'update');

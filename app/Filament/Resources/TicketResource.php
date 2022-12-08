@@ -47,10 +47,10 @@ class TicketResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('post_id')->searchable(),
+                Tables\Columns\TextColumn::make('post.title')->searchable()->label('Event'),
                 Tables\Columns\TextColumn::make('batch_no')->searchable(),
                 Tables\Columns\TextColumn::make('quantity')->searchable(),
-                Tables\Columns\TextColumn::make('status')->searchable(),
+                Tables\Columns\BooleanColumn::make('status')->searchable(),
                 Tables\Columns\TextColumn::make('discount')->searchable(),
             ])
             ->filters([
@@ -58,7 +58,7 @@ class TicketResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->color('success'),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([

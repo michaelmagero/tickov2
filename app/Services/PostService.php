@@ -50,8 +50,8 @@ class PostService
     public function getPosts(): JsonResponse
     {
         return response()->json([
-            'data' => PostResource::collection(Post::paginate(10))
-        ], 204);
+            'data' => PostResource::collection(Post::where('user_id', auth()->id())->paginate(10))
+        ], 200);
     }
 
     public function storePost($request): JsonResponse
@@ -61,7 +61,7 @@ class PostService
         $this->checkSubscriptionStatus();
 
         $post = new Post();
-        $post->user_id = auth('api')->id();
+        $post->user_id = auth()->id();
         $post->category_id = $request->category_id;
         $post->post_id = Str::uuid();
         $post->title = $request->title;
@@ -92,19 +92,19 @@ class PostService
 
         return response()->json([
             'message' => 'Post Created Successfully',
-            'data' => PostResource::collection($post)
+            'data' => $post
         ], 201);
 
     }
 
-    public function showPost(Post $post): JsonResponse
+    public function showPost($post): JsonResponse
     {
         return response()->json([
-            'data' => PostResource::collection(Post::find($post))
+            'data' => $post->id
         ]);
     }
 
-    public function updatePost(Request $request, Post $post): JsonResponse
+    public function updatePost($request, $post): JsonResponse
     {
         $this->checkSubscriptionStatus();
 
@@ -133,7 +133,7 @@ class PostService
         ]);
     }
 
-    public function deletePost(Post $post): JsonResponse
+    public function deletePost($post): JsonResponse
     {
         $post->delete();
 

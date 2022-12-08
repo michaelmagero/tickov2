@@ -8,15 +8,11 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class CategoryResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  Request  $request
-     * @return array
-     */
+
     public function toArray($request): array
     {
         return [
+            'id' => $this->resource,
             'category' => $this->category,
             'description' => $this->description,
             'created_at' => Carbon::create($this->created_at)->format('Y-m-d')

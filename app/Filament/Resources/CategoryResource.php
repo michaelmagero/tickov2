@@ -40,14 +40,13 @@ class CategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('category')->searchable(),
                 Tables\Columns\TextColumn::make('description')->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime('M j, Y')->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->color('success'),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

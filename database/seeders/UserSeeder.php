@@ -26,6 +26,6 @@ class UserSeeder extends Seeder
             'role' => 'super-admin', //admin,buyer,vendor
         ]);
 
-        User::factory()->count(20)->create();
+        //User::factory()->count(20)->create();
     }
 }

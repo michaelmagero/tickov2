@@ -20,7 +20,7 @@ return new class extends Migration
             $table->uuid('post_id');
             $table->string('title');
             $table->string('poster');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('location');
             $table->string('date');
             $table->boolean('status');
