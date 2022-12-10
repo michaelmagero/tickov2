@@ -1,80 +1,87 @@
 <template>
     <Navbar />
     <Hero />
+
+
     <!-- FEATURES SECTION -->
     <div class="bg-white/80 mx-auto max-w-7xl px-6 py-40">
         <h1 class="text-center font-bold pb-10 text-4xl py-10 text-emerald-800">why ticko?</h1>
-        <div class="flex px-4 pt-10 pb-20">
-            <div>
+
+        <div class="flex items-center justify-between px-4">
+            <div class="p-10">
                 <TicketIcon class="w-10 h-10 text-emerald-800" />
                 <h3 class="py-4 text-2xl font-bold text-gray-800">Event Tickets</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
+                <p class="text-gray-700 font-medium">List your events and manage tickting by creating custom ticket types and prices.</p>
             </div>
-            <div>
+            <div class="p-10">
                 <ShoppingBagIcon class="w-10 h-10 text-emerald-800" />
                 <h3 class="py-4 text-2xl font-bold text-gray-800">Merchandise Shop</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
+                <p class="text-gray-700 font-medium">Sell your merchandise item with a personalized online shop with all e-shop features out of the box.</p>
             </div>
-            <div>
+            <div class="p-10">
                 <ShareIcon class="w-10 h-10 text-emerald-800"/>
                 <h3 class="py-4 text-2xl font-bold text-gray-800">Social Share Buttons</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
+                <p class="text-gray-700 font-medium">Promote your events and tickets across leading social media platform with hybrid share buttons with tracking and analytics functionality.</p>
             </div>
         </div>
 
-        <div class="flex px-4 pt-10 pb-20">
-            <div>
+        <div class="flex items-center justify-between px-4">
+            <div class="p-10">
                 <DevicePhoneMobileIcon class="w-10 h-10 text-emerald-800" />
-                <h3 class="py-4 text-2xl font-bold text-gray-800">Comment and Reviews Forms</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
+                <h3 class="py-4 text-2xl font-bold text-gray-800">Reviews Forms</h3>
+                <p class="text-gray-700 font-medium">Gather real time event and merchandise shop feedback and reviews all managed from your dashboard.</p>
             </div>
-            <div>
+            <div class="p-10">
                 <QrCodeIcon class="w-10 h-10 text-emerald-800"/>
-                <h3 class="py-4 text-2xl font-bold text-gray-800">Discount and Coupon Codes</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
+                <h3 class="py-4 text-2xl font-bold text-gray-800">Coupon Codes</h3>
+                <p class="text-gray-700 font-medium">Create, share and manage discount and coupon codes for event and merchandise. </p>
             </div>
-            <div>
+            <div class="p-10">
                 <CreditCardIcon class="w-10 h-10 text-emerald-800" />
                 <h3 class="py-4 text-2xl font-bold text-gray-800">Payment Integration</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
-            </div>
-        </div>
-        <div class="flex px-4 pt-10 pb-20">
-            <div>
-                <EnvelopeIcon  class="w-10 h-10 text-emerald-800" />
-                <h3 class="py-4 text-2xl font-bold text-gray-800">Email Marketing</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
-            </div>
-            <div>
-                <ChatBubbleBottomCenterIcon class="w-10 h-10 text-emerald-800" />
-                <h3 class="py-4 text-2xl font-bold text-gray-800">SMS Marketing</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
-            </div>
-            <div>
-                <ComputerDesktopIcon class="w-10 h-10 text-emerald-800" />
-                <h3 class="py-4 text-2xl font-bold text-gray-800">CRM Platform</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
-            </div>
-        </div>
-        <div class="flex px-4 pt-10 pb-20">
-            <div>
-                <GiftIcon class="w-10 h-10 text-emerald-800" />
-                <h3 class="py-4 text-2xl font-bold text-gray-800">Gift Cards</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
-            </div>
-            <div>
-                <PhoneArrowDownLeftIcon  class="w-10 h-10 text-emerald-800" />
-                <h3 class="py-4 text-2xl font-bold text-gray-800">24/7 Support</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
-            </div>
-            <div>
-                <PresentationChartBarIcon class="w-10 h-10 text-emerald-800" />
-                <h3 class="py-4 text-2xl font-bold text-gray-800">Analytics & Reporting</h3>
-                <p class="text-gray-700 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos, quae reiciendis debitis saepe nam voluptatibus modi aliquid minus ad.</p>
+                <p class="text-gray-700 font-medium">Collect payments directly from customers from all leading mobile and card platforms. No middleman!</p>
             </div>
         </div>
 
+        <div class="flex items-center justify-between px-4">
+            <div class="p-10">
+                <EnvelopeIcon  class="w-10 h-10 text-emerald-800" />
+                <h3 class="py-4 text-2xl font-bold text-gray-800">Email Marketing</h3>
+                <p class="text-gray-700 font-medium">Create mail list and run advertising campaigns on upcoming events and merchandise.</p>
+            </div>
+            <div class="p-10">
+                <ChatBubbleBottomCenterIcon class="w-10 h-10 text-emerald-800" />
+                <h3 class="py-4 text-2xl font-bold text-gray-800">USSD Integration</h3>
+                <p class="text-gray-700 font-medium">Reach a wider market with customized USSD codes to supplement your online store and ticket sales.</p>
+            </div>
+            <div class="p-10">
+                <ComputerDesktopIcon class="w-10 h-10 text-emerald-800" />
+                <h3 class="py-4 text-2xl font-bold text-gray-800">CRM Platform</h3>
+                <p class="text-gray-700 font-medium">Continously engage with your clients and find new clients right from your administration panel. </p>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between px-4">
+            <div class="p-10">
+                <GiftIcon class="w-10 h-10 text-emerald-800" />
+                <h3 class="py-4 text-2xl font-bold text-gray-800">Gift Cards</h3>
+                <p class="text-gray-700 font-medium">Create redeemable gift cards on events tickets or merchandise redeemable to clients and managed from administrative panel.</p>
+            </div>
+            <div class="p-10">
+                <PhoneArrowDownLeftIcon  class="w-10 h-10 text-emerald-800" />
+                <h3 class="py-4 text-2xl font-bold text-gray-800">24/7 Support</h3>
+                <p class="text-gray-700 font-medium">Our support team are always just a few clicks away and ready to help with our shared expertise to make sure using ticko remains valuable. </p>
+            </div>
+            <div class="p-10">
+                <PresentationChartBarIcon class="w-10 h-10 text-emerald-800" />
+                <h3 class="py-4 text-2xl font-bold text-gray-800">Analytics & Reporting</h3>
+                <p class="text-gray-700 font-medium">Get insights and valuable performance reports on your events and merchandise sales with customizable chart and other data representation options. </p>
+            </div>
+        </div>
     </div>
+
+
+
     <!-- CTA SECTION -->
     <div class="flex flex-col items-center justify-center bg-emerald-800 py-24">
         <h1 class="text-5xl text-white py-6">Ready to get Started?</h1>

@@ -50,10 +50,10 @@
                             <li class="py-2 font-bold">500 Event Tickets</li>
                             <li class="py-2 font-bold">20 Merchandise Items</li>
                             <li class="py-2 font-bold">Social Media Share Buttons</li>
-                            <li class="py-2 font-bold">Comments and Reviews Forms</li>
+                            <li class="py-2 font-bold">Reviews Forms</li>
                             <li class="py-2 font-bold">Discount and Coupon Codes</li>
                             <li class="py-2 font-bold">Payment Integration</li>
-                            <li class="py-2 font-bold">SMS Marketing</li>
+                            <li class="py-2 font-bold">Email Marketing</li>
                             <li class="py-2 font-bold">24/7 Support</li>
                             <li class="py-2 font-bold">Analytics & Reporting</li>
 
@@ -71,12 +71,12 @@
                             <li class="py-2 font-bold">500 Event Tickets</li>
                             <li class="py-2 font-bold">20 Merchandise Items</li>
                             <li class="py-2 font-bold">Social Media Share Buttons</li>
-                            <li class="py-2 font-bold">Comments and Reviews Forms</li>
+                            <li class="py-2 font-bold">Reviews Forms</li>
                             <li class="py-2 font-bold">Discount and Coupon Codes</li>
                             <li class="py-2 font-bold">Gift Cards</li>
                             <li class="py-2 font-bold">Payment Integration</li>
                             <li class="py-2 font-bold">Email Marketing</li>
-                            <li class="py-2 font-bold">SMS Marketing</li>
+                            <li class="py-2 font-bold">USSD Integration</li>
                             <li class="py-2 font-bold">CRM Platform</li>
                             <li class="py-2 font-bold">24/7 Support</li>
                             <li class="py-2 font-bold">Analytics & Reporting</li>
