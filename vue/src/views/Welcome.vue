@@ -7,14 +7,23 @@
                 <p class="text-center text-gray-600 pt-6">Ticko is an integrated ticketing and merchandise platform for creatives and businesses.
                     Sign up to manage your ticketing or online shop.</p>
                 <div class="signup-buttons flex flex-col items-center justify-center pt-8 pb-4">
-                    <div class="font-semibold w-96 text-center rounded border border-emerald-800 px-10 py-2 my-2 hover:bg-emerald-800 hover:text-white hover:border-0">
-                        <a href="" class="">Sign up with Google</a>
+                    <div class="text-center font-semibold w-96 text-center rounded border border-emerald-800 px-10 py-2 my-2 hover:bg-emerald-800 hover:text-white hover:border-0 text-gray-600 text-sm">
+                        <span class="flex items-center justify-center">
+                            <box-icon type="logo" name="google"></box-icon>
+                            <a href="" class="px-2">Sign up with Google</a>
+                        </span>
                     </div>
-                    <div class="font-semibold w-96 text-center rounded border border-emerald-800 px-10 py-2 my-2 hover:bg-emerald-800 hover:text-white hover:border-0">
-                        <a href="" class="">Sign up with Facebook</a>
+                    <div class="font-semibold w-96 text-center rounded border border-emerald-800 px-10 py-2 my-2 hover:bg-emerald-800 hover:text-white hover:border-0 text-gray-600 text-sm">
+                        <span class="flex items-center justify-center">
+                            <box-icon type="logo" name="facebook-circle"></box-icon>
+                            <a href="" class="px-2">Sign up with Facebook</a>
+                        </span>
                     </div>
-                    <div class="font-semibold w-96 text-center rounded border border-emerald-800 px-10 py-2 my-2 hover:bg-emerald-800 hover:text-white hover:border-0">
-                        <a @click="$router.push('/auth/register')" class="">Sign up with Email</a>
+                    <div class="font-semibold w-96 text-center rounded border border-emerald-800 px-10 py-2 my-2 hover:bg-emerald-800 hover:text-white hover:border-0 text-gray-600 text-sm">
+                        <span class="flex items-center justify-center">
+                            <box-icon type="solid" name="envelope"></box-icon>
+                            <a @click="$router.push('/auth/register')" class="px-2">Sign up with Email</a>
+                        </span>
                     </div>
                 </div>
                 <hr>

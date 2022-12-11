@@ -94,11 +94,9 @@
 </template>
 
 <script setup>
-    import Navbar from '../components/Navbar.vue'
-    import Hero from '../components/HeroSection.vue'
-    import FeaturedEvents from '../components/FeaturedEvents.vue'
-    import UpcomingEvents from '../components/UpcomingEvents.vue'
-    import Pricing from '../components/Pricing.vue'
-    import Footer from '../components/Footer.vue'
+    import Navbar from '../components/website/Navbar.vue'
+    import Hero from '../components/website/HeroSection.vue'
+    import Pricing from '../components/website/Pricing.vue'
+    import Footer from '../components/website/Footer.vue'
 import { ChartPieIcon, ChatBubbleBottomCenterIcon, ComputerDesktopIcon, CreditCardIcon, DevicePhoneMobileIcon, EnvelopeIcon, GiftIcon, PhoneArrowDownLeftIcon, PresentationChartBarIcon, QrCodeIcon, ShareIcon, ShoppingBagIcon, TicketIcon } from '@heroicons/vue/24/outline'
 </script>

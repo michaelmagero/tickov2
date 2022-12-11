@@ -6,9 +6,8 @@
                 <h1 class="text-2xl text-gray-900 text-center pt-3 font-bold">Enter your email to receive reset link</h1>
                 <div class="signup-form pt-10 pb-10 px-10">
                     <form action="" class="text-sm">
-                        <div class="flex flex-col py-3">
-                            <label for="">Email</label>
-                            <input type="email" name="" id="" class="rounded border border-gray-400 mt-2">
+                        <div class="flex flex-col py-2">
+                            <input type="email" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Email Address">
                         </div>
                         <div class="flex flex-col py-2">
                             <a href="" class="rounded bg-emerald-800 py-3 py-4 text-white text-center font-semibold mt-4 hover:bg-emerald-700">Send Password Reset Link</a>

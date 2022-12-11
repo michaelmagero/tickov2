@@ -7,14 +7,12 @@
                 <div class="signup-form pt-10 pb-10 px-10">
                     <form action="" class="text-sm">
                         <div class="flex flex-col py-3">
-                            <label for="">Email</label>
-                            <input type="email" name="" id="" class="rounded border border-gray-400 mt-2">
+                            <input type="email" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Email Address">
                         </div>
-                        <div class="flex flex-col py-4">
-                            <label for="">Password</label>
-                            <input type="password" name="" id="" class="rounded border border-gray-400 mt-2">
+                        <div class="flex flex-col py-3">
+                            <input type="password" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Password">
                         </div>
-                        <div class="flex flex-col py-4">
+                        <div class="flex flex-col py-4 text-sm">
                             <p>Forgot your Password? <a @click="$router.push('/auth/reset-password')" class="text-emerald-800 underline">Reset Password</a></p>
                         </div>
 
@@ -26,7 +24,7 @@
                 <hr>
                 <p class="text-center pt-4 text-sm">By Signing up you agree to our <a class="text-emerald-800 underline hover:text-emerald-700">Terms of Service</a> and you have read our <a href="" class="text-emerald-800 underline hover:text-emerald-700">Privacy Policy</a></p>
             </div>
-            <p class="pt-4 text-sm">Already have an account? <a @click="$router.push('/auth/login')" class="text-emerald-800 underline hover:text-emerald-700">Sign in</a></p>
+            <p class="pt-4 text-sm">Don't have an account yet? <a @click="$router.push('/auth/register')" class="text-emerald-800 underline hover:text-emerald-700">Sign Up</a></p>
         </div>
     </div>
 </template>

@@ -1,35 +1,29 @@
 <template>
     <div class="bg-gray-100 w-full h-screen">
-        <div class="flex flex-col items-center justify-center h-full">
+        <div class="flex flex-col items-center justify-center h-full my-2">
             <div class="card h-auto bg-white/80 px-6 py-4 shadow-md rounded rounded-xl w-1/3">
                 <h3 class="text-3xl text-emerald-800 logo text-center pt-4">ticko</h3>
                 <h1 class="text-2xl text-gray-900 text-center pt-3 font-bold">Sign Up for a free 14-day trial</h1>
                 <div class="signup-form pt-10 pb-10 px-10">
                     <form action="" class="text-sm">
                         <div class="flex flex-col py-2">
-                            <label for="">Full Name</label>
-                            <input type="text" name="" id="" class="rounded border border-gray-400 mt-2" placeholder="John Doe">
+                            <input type="text" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Full Names">
                         </div>
                         <div class="flex flex-col py-2">
-                            <label for="">Company Name</label>
-                            <input type="text" name="" id="" class="rounded border border-gray-400 mt-2">
+                            <input type="text" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Company Name">
                         </div>
                         <div class="flex flex-col py-2">
-                            <label for="">Phone (+254)</label>
-                            <input type="text" name="" id="" class="rounded border border-gray-400 mt-2">
+                            <input type="text" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Phone">
                         </div>
                         <div class="flex flex-col py-2">
-                            <label for="">Email</label>
-                            <input type="email" name="" id="" class="rounded border border-gray-400 mt-2">
+                            <input type="email" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Email">
                         </div>
                         <div class="flex flex-col py-2">
-                            <label for="">Password</label>
-                            <input type="password" name="" id="" class="rounded border border-gray-400 mt-2">
+                            <input type="password" name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold" placeholder="Password">
                         </div>
                         <div class="flex flex-col py-2">
-                            <label for="">Industry</label>
-                            <select name="" id="" class="rounded border border-gray-400 mt-2">
-                                <option value="" v-for="industry in industryTypes" class="text-sm">{{ industry.name }}</option>
+                            <select name="" id="" class="rounded border border-gray-300 mt-2 text-sm font-semibold">
+                                <option value="{{ industry.value }}" v-for="industry in industryTypes" class="text-sm"> {{ industry.name   }}</option>
                             </select>
                         </div>
                         <div class="flex flex-col py-2">
@@ -47,14 +41,15 @@
 
 <script setup>
     const industryTypes = [
-        {name: 'Entertainment'},
-        {name: 'Creative'},
-        {name: 'Education'},
-        {name: 'Finance'},
-        {name: 'FinTech'},
-        {name: 'EdTech'},
-        {name: 'Retail'},
-        {name: 'FinTech'},
+        {name: 'Select Your Industry', value: ''},
+        {name: 'Entertainment', value: 'Entertainment'},
+        {name: 'Creative', value: 'Creative'},
+        {name: 'Education', value: 'Education'},
+        {name: 'Finance', value: 'Finance'},
+        {name: 'FinTech', value: 'FinTech'},
+        {name: 'EdTech', value: 'EdTech'},
+        {name: 'Retail', value: 'Retail'},
+        {name: 'FinTech', value: 'FinTech'},
     ]
 </script>
 
