@@ -24,64 +24,38 @@
             </div>
 
             <div class="flex items-center justify-center text-center">
-                <div class="hobby-package px-6">
-                    <h3 class="text-emerald-800 font-bold text-2xl py-2">Hobby</h3>
-                    <p class="text-gray-800 font-semibold py-3">Hobbyst 100 or less members events or aspiring
-                        merchandise sales</p>
+                <div class="hobby-package px-6" v-for="hobby in hobbyPackageDetails">
+                    <h3 class="text-emerald-800 font-bold text-2xl py-2">{{ hobby.package_name }}</h3>
+                    <p class="text-gray-800 font-semibold py-3">{{ hobby.description }}</p>
                     <ul class="py-5">
-                        <li class="py-2 font-bold">200 Event Tickets</li>
-                        <li class="py-2 font-bold">10 Merchandise Items</li>
-                        <li class="py-2 font-bold">24/7 Support</li>
-                        <li class="py-2 font-bold">Analytics & reporting</li>
-                        <li class="py-2 font-bold">Payment Integration</li>
+                        <li class="py-2 font-bold" v-for="feature in hobby.features">{{ feature.name }}</li>
                     </ul>
-                    <p class="text-gray-900 font-semibold text-2xl py-3"><span>KES</span> 1,000</p>
+                    <p class="text-gray-900 font-semibold text-2xl py-3"><span>KES</span> {{ hobby.price }}</p>
                     <a href="#"
                         class="inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded border border-transparent bg-emerald-800 px-6 py-2 my-4 text-sm text-white shadow-sm hover:bg-emerald-700">Sign
                         up</a>
-
                 </div>
-                <div class="group-packages flex items-center justify-center bg-white/80 px-4 py-16 rounded-sm shadow">
-                    <div class="growth-package px-6 text-center">
-                        <h3 class="text-emerald-800 font-bold text-2xl py-2">Growth</h3>
-                        <p class="text-gray-800 font-semibold py-3">Growing creative with significant attendees events
-                            and growing merchandise sales</p>
-                        <ul class="py-5">
-                            <li class="py-2 font-bold">500 Event Tickets</li>
-                            <li class="py-2 font-bold">20 Merchandise Items</li>
-                            <li class="py-2 font-bold">Social Media Share Buttons</li>
-                            <li class="py-2 font-bold">Reviews Forms</li>
-                            <li class="py-2 font-bold">Discount and Coupon Codes</li>
-                            <li class="py-2 font-bold">Payment Integration</li>
-                            <li class="py-2 font-bold">Email Marketing</li>
-                            <li class="py-2 font-bold">24/7 Support</li>
-                            <li class="py-2 font-bold">Analytics & Reporting</li>
 
+
+                <div class="group-packages flex items-center justify-center bg-white/80 px-4 py-16 rounded-sm shadow">
+                    <div class="growth-package px-6 text-center" v-for="growth in growthPackageDetails">
+                        <h3 class="text-emerald-800 font-bold text-2xl py-2">{{ growth.package_name }}</h3>
+                        <p class="text-gray-800 font-semibold py-3">{{ growth.description }}</p>
+                        <ul class="py-5">
+                            <li class="py-2 font-bold" v-for="feature in growth.features">{{ feature.name }}</li>
                         </ul>
-                        <p class="text-gray-900 font-semibold text-2xl py-2"><span>KES</span> 3,000 / month</p>
+                        <p class="text-gray-900 font-semibold text-2xl py-2"><span>KES</span> {{ growth.price }} / month</p>
                         <a href="#"
                             class="inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded border border-transparent bg-emerald-800 px-6 py-2 my-4 text-sm text-white shadow-sm hover:bg-emerald-700">Sign
                             up</a>
                     </div>
-                    <div class="business-package px-6 text-center">
-                        <h3 class="text-emerald-800 font-bold text-2xl py-2">Business</h3>
-                        <p class="text-gray-800 font-semibold py-3">Large attendee events with large ticket and
-                            merchandise volumes </p>
+                    <div class="business-package px-6 text-center" v-for="busines in businessPackageDetails">
+                        <h3 class="text-emerald-800 font-bold text-2xl py-2">{{ business.package_name }}</h3>
+                        <p class="text-gray-800 font-semibold py-3">{{ business.description }} </p>
                         <ul class="py-5">
-                            <li class="py-2 font-bold">500 Event Tickets</li>
-                            <li class="py-2 font-bold">20 Merchandise Items</li>
-                            <li class="py-2 font-bold">Social Media Share Buttons</li>
-                            <li class="py-2 font-bold">Reviews Forms</li>
-                            <li class="py-2 font-bold">Discount and Coupon Codes</li>
-                            <li class="py-2 font-bold">Gift Cards</li>
-                            <li class="py-2 font-bold">Payment Integration</li>
-                            <li class="py-2 font-bold">Email Marketing</li>
-                            <li class="py-2 font-bold">USSD Integration</li>
-                            <li class="py-2 font-bold">CRM Platform</li>
-                            <li class="py-2 font-bold">24/7 Support</li>
-                            <li class="py-2 font-bold">Analytics & Reporting</li>
+                            <li class="py-2 font-bold" v-for="feature in business.features">{{ feature.name }}</li>
                         </ul>
-                        <p class="text-gray-900 font-semibold text-2xl py-2"><span>KES</span> 5,000 / month</p>
+                        <p class="text-gray-900 font-semibold text-2xl py-2"><span>KES</span> {{ feature.price }} / month</p>
                         <a href="#"
                             class="inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded border border-transparent bg-emerald-800 px-6 py-2 my-4 text-sm text-white shadow-sm hover:bg-emerald-700">Sign
                             up</a>
@@ -98,6 +72,62 @@
 <script setup>
 import { ArrowRightIcon } from '@heroicons/vue/24/outline';
 import { CheckCircleIcon } from '@heroicons/vue/24/solid'
+
+const hobbyPackageDetails = [
+    {
+        package_name: 'Hobby',
+        description: 'Hobbyst 100 or less members events or aspiring merchandise sales',
+        features: [
+            { name: '200 Event Tickets' },
+            { name: '10 Merchandise Items' },
+            { name: '24/7 Support' },
+            { name: 'Analytics & reporting' },
+            { name: 'Payment Integration' }
+        ],
+        price: '1,000'
+    }
+]
+
+const growthPackageDetails = [
+    {
+        package_name: 'Growth',
+        description: 'Growing creative with significant attendees events and growing merchandise sales',
+        features: [
+            { name: '500 Event Tickets' },
+            { name: '20 Merchandise Items' },
+            { name: 'Social Media Share Buttons' },
+            { name: 'Reviews Forms' },
+            { name: 'Discount and Coupon Codes' },
+            { name: 'Payment Integration' },
+            { name: 'Email Marketing ' },
+            { name: '24/7 Support' },
+            { name: 'Analytics & Reporting ' },
+        ],
+        price: '3,000'
+    }
+]
+
+const businessPackageDetails = [
+    {
+        package_name: 'Business',
+        description: 'Large attendee events with large ticket and merchandise volumes ',
+        features: [
+            { name: '500 Event Tickets'},
+            { name: '20 Merchandise Items'},
+            { name: 'Social Media Share Buttons'},
+            { name: 'Reviews Forms'},
+            { name: 'Discount and Coupon Codes'},
+            { name: 'Gift Cards'},
+            { name: 'Payment Integration'},
+            { name: 'Email Marketing'},
+            { name: 'USSD Integration'},
+            { name: 'CRM Platform'},
+            { name: '24/7 Support'},
+            { name: 'Analytics & Reporting'},
+        ],
+        price: '5,000'
+    }
+]
 
 </script>
 

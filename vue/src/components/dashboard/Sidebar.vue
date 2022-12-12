@@ -8,13 +8,14 @@
                 </div>
                 <div class="notification pl-3 pt-1">
                     <box-icon name="bell"></box-icon>
+                    <label></label>
                 </div>
             </div>
         </div>
 
         <div id="menu-details" class="pt-10">
             <ul class="flex flex-col justify-center">
-                <li class="py-1 font-semibold text-gray-600" v-for="menu in menuDetails">
+                <li class="py-1 font-semibold text-gray-600 hover:text-emerald-900 active" v-for="menu in menuDetails" @click="$router.push(menu.url)">
                     <box-icon :type="menu.type" :name="menu.icon" class="pt-1"></box-icon>
                     <span class="p-2">{{ menu.value }}</span>
                 </li>
@@ -25,22 +26,22 @@
 
 <script setup>
     const menuDetails = [
-        { name:'Dashboard', value:'Dashboard', icon: 'dashboard', type: 'solid' },
-        { name:'Events', value:'Events', icon: 'calendar-event', type: '' },
-        { name:'Merchandise', value:'Merchandise', icon: 'cart-alt', type: 'solid' },
-        { name:'Customers', value:'Customers', icon: 'user-circle', type:'solid' },
-        { name:'Reviews', value:'Reviews', icon: 'message-rounded-dots', type: '' },
-        { name:'Promotions', value:'Promotions', icon: 'megaphone', type:'solid' },
-        { name:'Coupons', value:'Coupons', icon: 'coupon', type:'solid' },
-        { name:'GiftCards', value:'GiftCards', icon: 'gift', type:'' },
-        { name:'USSD', value:'USSD', icon: 'mobile-alt', type: '' },
-        { name:'Payments', value:'Payments', icon: 'wallet'},
-        { name:'Reports', value:'Reports', icon: 'chalkboard', type: '' },
-        { name:'Log Out', value:'Log Out', icon: 'log-out-circle' },
+        { url: 'dashboard', name:'Dashboard', value:'Dashboard', icon: 'dashboard', type: 'solid' },
+        { url: 'events', name:'Events', value:'Events', icon: 'calendar-event', type: '' },
+        { url: 'shop', name:'Shop', value:'Shop', icon: 'cart-alt', type: 'solid' },
+        { url: 'customers', name:'Customers', value:'Customers', icon: 'user-circle', type:'solid' },
+        { url: 'reviews', name:'Reviews', value:'Reviews', icon: 'message-rounded-dots', type: '' },
+        { url: 'promotions', name:'Promotions', value:'Promotions', icon: 'megaphone', type:'solid' },
+        { url: 'coupons', name:'Coupons', value:'Coupons', icon: 'coupon', type:'solid' },
+        { url: 'giftCards', name:'GiftCards', value:'GiftCards', icon: 'gift', type:'' },
+        { url: 'sms', name:'SMS', value:'SMS', icon: 'mobile-alt', type: '' },
+        { url: 'payments', name:'Payments', value:'Payments', icon: 'wallet'},
+        { url: 'reports', name:'Reports', value:'Reports', icon: 'chalkboard', type: '' },
+        { url: 'log', name:'Log Out', value:'Log Out', icon: 'log-out-circle' },
         {},
-        { name:'Help', value:'Help', icon: 'support' },
-        { name:'Documents', value:'Documents', icon: 'folder-open', type:'solid' },
-        { name:'Change Plan', value:'Change Plan', icon: 'credit-card', type:'solid' },
+        { url: 'help', name:'help', value:'Help', icon: 'support' },
+        { url: 'documents', name:'documents', value:'Documents', icon: 'folder-open', type:'solid' },
+        { url: 'subscription', name:'subscription', value:'Change Plan', icon: 'credit-card', type:'solid' },
     ]
 </script>
 
