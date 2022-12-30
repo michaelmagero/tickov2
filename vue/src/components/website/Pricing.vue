@@ -11,7 +11,7 @@
                                 Monthly
                             </div>
                             <div class="relative">
-                                <input type="checkbox" id="toggleB" class="sr-only">
+                                <input type="checkbox" id="toggleB" class="sr-only" @click="updatePrices">
                                 <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
                                 <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
                             </div>
@@ -28,9 +28,12 @@
                     <h3 class="text-emerald-800 font-bold text-2xl py-2">{{ hobby.package_name }}</h3>
                     <p class="text-gray-800 font-semibold py-3">{{ hobby.description }}</p>
                     <ul class="py-5">
-                        <li class="py-2 font-bold" v-for="feature in hobby.features">{{ feature.name }}</li>
+                        <span class="flex justify-center py-2" v-for="feature in hobby.features">
+                            <box-icon name="check-circle" class="fill-emerald-800 ml-2 mr-2"></box-icon>
+                            <li class="font-bold">{{ feature.name }}</li>
+                        </span>
                     </ul>
-                    <p class="text-gray-900 font-semibold text-2xl py-3"><span>KES</span> {{ hobby.price }}</p>
+                    <p class="text-gray-900 font-semibold text-2xl py-3"><span>KES</span> {{ hobby.price }} / month</p>
                     <a href="#"
                         class="inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded border border-transparent bg-emerald-800 px-6 py-2 my-4 text-sm text-white shadow-sm hover:bg-emerald-700">Sign
                         up</a>
@@ -42,20 +45,26 @@
                         <h3 class="text-emerald-800 font-bold text-2xl py-2">{{ growth.package_name }}</h3>
                         <p class="text-gray-800 font-semibold py-3">{{ growth.description }}</p>
                         <ul class="py-5">
-                            <li class="py-2 font-bold" v-for="feature in growth.features">{{ feature.name }}</li>
+                            <span class="flex justify-center py-2" v-for="feature in growth.features">
+                                <box-icon name="check-circle" class="fill-emerald-800 ml-2 mr-2"></box-icon>
+                                <li class="font-bold">{{ feature.name }}</li>
+                            </span>
                         </ul>
                         <p class="text-gray-900 font-semibold text-2xl py-2"><span>KES</span> {{ growth.price }} / month</p>
                         <a href="#"
                             class="inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded border border-transparent bg-emerald-800 px-6 py-2 my-4 text-sm text-white shadow-sm hover:bg-emerald-700">Sign
                             up</a>
                     </div>
-                    <div class="business-package px-6 text-center" v-for="busines in businessPackageDetails">
+                    <div class="business-package px-6 text-center" v-for="business in businessPackageDetails">
                         <h3 class="text-emerald-800 font-bold text-2xl py-2">{{ business.package_name }}</h3>
                         <p class="text-gray-800 font-semibold py-3">{{ business.description }} </p>
                         <ul class="py-5">
-                            <li class="py-2 font-bold" v-for="feature in business.features">{{ feature.name }}</li>
+                            <span class="flex justify-center py-2" v-for="feature in business.features">
+                                <box-icon name="check-circle" class="fill-emerald-800 ml-2 mr-2"></box-icon>
+                                <li class="font-bold">{{ feature.name }}</li>
+                            </span>
                         </ul>
-                        <p class="text-gray-900 font-semibold text-2xl py-2"><span>KES</span> {{ feature.price }} / month</p>
+                        <p class="text-gray-900 font-semibold text-2xl py-2"><span>KES</span> {{ business.price }} / month</p>
                         <a href="#"
                             class="inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded border border-transparent bg-emerald-800 px-6 py-2 my-4 text-sm text-white shadow-sm hover:bg-emerald-700">Sign
                             up</a>
@@ -63,7 +72,12 @@
                 </div>
             </div>
             <div class="text-center pt-20">
-                <a href="#" class="text-emerald-800 font-bold font-3xl hover:underline">Learn More</a>
+                <a href="#" class="text-emerald-800 font-bold font-3xl hover:underline">
+                    <span class="flex justify-center py-2">
+                        <span >Learn More</span>
+                        <box-icon name="right-arrow-alt" class="fill-emerald-800"></box-icon>
+                    </span>
+                </a>
             </div>
         </div>
     </div>
@@ -72,6 +86,7 @@
 <script setup>
 import { ArrowRightIcon } from '@heroicons/vue/24/outline';
 import { CheckCircleIcon } from '@heroicons/vue/24/solid'
+
 
 const hobbyPackageDetails = [
     {
@@ -128,6 +143,10 @@ const businessPackageDetails = [
         price: '5,000'
     }
 ]
+
+function updatePrices () {
+    alert("this is mike")
+}
 
 </script>
 

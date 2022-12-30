@@ -16,7 +16,7 @@
             </div>
             <div class="w-1/3">
                 <div class="rounded-2xl">
-                    <iframe src="https://www.youtube.com/watch?v=9xwazD5SyVg" frameborder="0" width="450" height="300" class="rounded-2xl"></iframe>
+                    <iframe src="https://www.youtube.com/embed/9xwazD5SyVg" frameborder="0" width="450" height="300" class="rounded-2xl"></iframe>
                 </div>
             </div>
         </div>

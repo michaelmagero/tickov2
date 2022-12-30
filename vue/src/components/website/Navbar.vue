@@ -15,13 +15,15 @@
             </PopoverButton>
           </div>
           <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <a href="#" class="text-md font-extrabold hover:text-emerald-800 px-6">Home</a>
-            <a href="#" class="text-md font-extrabold hover:text-emerald-800 px-6">Partners</a>
-            <a href="#" class="text-md font-extrabold hover:text-emerald-800 px-6">Events</a>
-            <a href="#" class="text-md font-extrabold hover:text-emerald-800 px-6">Shop</a>
-            <a href="#" class="text-md font-extrabold hover:text-emerald-800 px-6">Pricing</a>
-            <a href="#" class="whitespace-nowrap uppercase font-extrabold hover:text-gray-900 border-2 border-emerald-800 py-2 px-10 rounded-3xl text-sm hover:bg-emerald-700 hover:text-white/80 hover:border-none">Try for Free</a>
-            <a href="#" class="ml-8 inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded-3xl border border-transparent bg-emerald-800 px-6 py-2 text-sm text-white shadow-sm hover:bg-emerald-700">Sign up</a>
+            <router-link to="/" class="text-md font-extrabold hover:text-emerald-800 px-6">Home</router-link>
+            <!-- <router-link to="#features" class="text-md font-extrabold hover:text-emerald-800 px-6">Features</router-link> -->
+            <router-link to="/events" class="text-md font-extrabold hover:text-emerald-800 px-6">Events</router-link>
+            <router-link to="/shops" class="text-md font-extrabold hover:text-emerald-800 px-6">Shops</router-link>
+            <router-link to="/pricing" class="text-md font-extrabold hover:text-emerald-800 px-6">Pricing</router-link>
+
+            <router-link to="/auth/login" class="whitespace-nowrap uppercase font-extrabold hover:text-gray-900 border-2 border-emerald-800 py-2 px-10 rounded-3xl text-sm hover:bg-emerald-700 hover:text-white/80 hover:border-none">Login</router-link>
+            <!-- <a href="#" class="ml-8 inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded-3xl border border-transparent bg-emerald-800 px-6 py-2 text-sm text-white shadow-sm hover:bg-emerald-700">Sign up</a> -->
+            <router-link to="/auth/register" class="ml-4 inline-flex uppercase font-extrabold items-center justify-center whitespace-nowrap rounded-3xl border border-transparent bg-emerald-800 px-6 py-2 text-sm text-white shadow-sm hover:bg-emerald-700">Sign Up</router-link>
           </div>
         </div>
       </div>
@@ -32,7 +34,7 @@
             <div class="px-5 pt-5 pb-6">
               <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="font-bold text-2xl font-sans text-emerald-800 font-sans">Ticko</h1>
+                    <h1 class="font-bold text-2xl font-sans text-emerald-800">Ticko</h1>
                 </div>
                 <div class="-mr-2">
                   <PopoverButton class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -71,20 +73,7 @@
 
 <script setup>
 import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue'
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  BookmarkSquareIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  LifebuoyIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
-  XMarkIcon,
-} from '@heroicons/vue/24/outline'
+import { Bars3Icon, PhoneIcon, PlayIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
 const callsToAction = [

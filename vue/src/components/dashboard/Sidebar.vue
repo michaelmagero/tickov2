@@ -1,5 +1,5 @@
 <template>
-    <div id="sidebar" class="bg-white/80 w-2/12 h-screen pt-10 pl-10 ">
+    <div id="sidebar" class="fixed top-0 h-screen bg-white w-2/12 pt-10 pl-10 ">
         <div id="auth-details" class="flex items-start justify-between">
             <h1 class="logo text-3xl text-emerald-800">ticko</h1>
             <div id="avatar-notifications-section" class="pr-5 flex pt-1 justify-end">
@@ -15,7 +15,7 @@
 
         <div id="menu-details" class="pt-10">
             <ul class="flex flex-col justify-center">
-                <li class="py-1 font-semibold text-gray-600 hover:text-emerald-900 active" v-for="menu in menuDetails" @click="$router.push(menu.url)">
+                <li class="py-1 font-semibold text-gray-600 hover:text-emerald-900 hover:font-bold active" v-for="menu in menuDetails" @click="$router.push(menu.url)">
                     <box-icon :type="menu.type" :name="menu.icon" class="pt-1"></box-icon>
                     <span class="p-2">{{ menu.value }}</span>
                 </li>

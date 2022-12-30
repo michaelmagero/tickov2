@@ -1,50 +1,60 @@
 <template>
-     <div id="overall-summary-card" class="pl-20">
-        <div class="bg-white shadow-sm border pt-10 w-5/6 h-40 mt-10 mr-10 rounded rounded-md">
-            <div id="summary-items" class="flex items-center justify-start">
-                <div class="border-r-4 pr-4 pl-10 pr-10 w-1/5">
-                    <box-icon type="solid" name="coupon"></box-icon>
+     <div id="overall-summary-card">
+        <div class="bg-white shadow-sm border pt-10 w-full h-40 mt-10 mr-10 rounded">
+            <div id="summary-items" class="flex items-center justify-start text-center">
+                <div class="border-r-4 pl-10 pr-10 w-1/5 flex justify-between">
                     <div>
-                        <h1 class="font-semibold text-lg text-gray-800">Tickets</h1>
+                        <h1 class="font-semibold text-lg text-gray-800 pb-2">Tickets</h1>
                         <h1 class="text-4xl">
                             <span class="font-semibold text-emerald-800"> 300</span>
                         </h1>
                     </div>
-                </div>
-                <div class="border-r-4 pr-4 pl-10 pr-10 w-1/5">
-                    <box-icon type="solid" name="cart-alt"></box-icon>
                     <div>
-                        <h1 class="font-semibold text-lg text-gray-800">Shop</h1>
+                        <box-icon type="solid" name="coupon" class="summary-icons mt-4"></box-icon>
+                    </div>
+                </div>
+                <div class="border-r-4 pl-10 pr-10 w-1/5 flex justify-between">
+                    <div>
+                        <h1 class="font-semibold text-lg text-gray-800 pb-2">Shop</h1>
                         <h1 class="text-4xl">
                             <span class="font-semibold text-emerald-800"> 80</span>
                         </h1>
                     </div>
-                </div>
-                <div class="border-r-4 pr-4 pl-10 pr-10 w-1/5">
-                    <box-icon type="solid" name="user-circle"></box-icon>
                     <div>
-                        <h1 class="font-semibold text-lg text-gray-800">Customers</h1>
+                        <box-icon type="solid" name="cart-alt" class="summary-icons mt-4"></box-icon>
+                    </div>
+                </div>
+                <div class="border-r-4 pl-10 pr-10 w-1/5 flex justify-between">
+                    <div>
+                        <h1 class="font-semibold text-lg text-gray-800 pb-2">Customers</h1>
                         <h1 class="text-4xl">
                             <span class="font-semibold text-emerald-800"> 1200</span>
                         </h1>
                     </div>
-                </div>
-                <div class="border-r-4 pr-4 pl-10 pr-10 w-1/5">
-                    <box-icon name="message-rounded-dots"></box-icon>
                     <div>
-                        <h1 class="font-semibold text-lg text-gray-800">Reviews</h1>
+                        <box-icon type="solid" name="user-circle" class="summary-icons mt-4"></box-icon>
+                    </div>
+                </div>
+                <div class="border-r-4 pl-10 pr-10 w-1/5 flex justify-between">
+                    <div>
+                        <h1 class="font-semibold text-lg text-gray-800 pb-2">Reviews</h1>
                         <h1 class="text-4xl">
                             <span class="font-semibold text-emerald-800"> 350</span>
                         </h1>
                     </div>
-                </div>
-                <div class="border-r-4 pr-4 pl-10 pr-10 w-1/5">
-                    <box-icon name="mobile-alt"></box-icon>
                     <div>
-                        <h1 class="font-semibold text-lg text-gray-800">SMS</h1>
+                        <box-icon name="message-rounded-dots" class="summary-icons mt-4"></box-icon>
+                    </div>
+                </div>
+                <div class="border-r-4 pl-10 pr-10 w-1/5 flex justify-between">
+                    <div>
+                        <h1 class="font-semibold text-lg text-gray-800 pb-2">SMS</h1>
                         <h1 class="text-4xl">
                             <span class="font-semibold text-emerald-800"> 1000</span>
                         </h1>
+                    </div>
+                    <div>
+                        <box-icon name="mobile-alt" class="summary-icons mt-4"></box-icon>
                     </div>
                 </div>
             </div>
@@ -74,4 +84,9 @@
 </script>
 
 <style>
+    .summary-icons {
+        width: 35px;
+        height: 35px;
+        fill: #065f46;
+    }
 </style>
